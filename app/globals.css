@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --primary-rgb: 157, 35, 35;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair);
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+.section-title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  color: rgb(var(--primary-rgb));
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.section-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.section-title-container::before,
+.section-title-container::after {
+  content: "";
+  height: 1px;
+  background-color: #d1d5db;
+  flex: 1;
+}
+
+.section-title-container::before {
+  margin-right: 2rem;
+}
+
+.section-title-container::after {
+  margin-left: 2rem;
+}
+
+.primary-button {
+  background-color: rgb(var(--primary-rgb));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.primary-button:hover {
+  background-color: rgba(var(--primary-rgb), 0.9);
+}
+
+.secondary-button {
+  border: 1px solid rgb(var(--primary-rgb));
+  color: rgb(var(--primary-rgb));
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.secondary-button:hover {
+  background-color: rgba(var(--primary-rgb), 0.1);
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.nav-link:hover {
+  color: rgb(var(--primary-rgb));
+}
+
+.nav-link.active {
+  border-bottom: 2px solid rgb(var(--primary-rgb));
+  color: rgb(var(--primary-rgb));
+}
