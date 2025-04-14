@@ -28,6 +28,42 @@ export default function Hero() {
 
       {/* Main content */}
       <div className="relative z-20 min-h-screen flex flex-col">
+        {/* Navigation */}
+        <div className="w-full pt-8 px-8">
+          <nav className="flex items-center space-x-2">
+            <Link
+              href="/"
+              className="px-4 py-2 text-sm text-white/80 hover:text-white rounded-full hover:bg-white/5 transition-all duration-300"
+            >
+              Home
+            </Link>
+            <Link
+              href="/property-search"
+              className="px-4 py-2 text-sm text-white/80 hover:text-white rounded-full hover:bg-white/5 transition-all duration-300"
+            >
+              Property Search
+            </Link>
+            <Link
+              href="/agents"
+              className="px-4 py-2 text-sm text-white/80 hover:text-white rounded-full hover:bg-white/5 transition-all duration-300"
+            >
+              Meet Our Agents
+            </Link>
+            <Link
+              href="/about"
+              className="px-4 py-2 text-sm text-white/80 hover:text-white rounded-full hover:bg-white/5 transition-all duration-300"
+            >
+              What Sets Us Apart
+            </Link>
+            <Link
+              href="/more"
+              className="px-4 py-2 text-sm text-white/80 hover:text-white rounded-full hover:bg-white/5 transition-all duration-300"
+            >
+              More
+            </Link>
+          </nav>
+        </div>
+
         {/* Centered header content */}
         <div className="flex-1 flex flex-col items-center justify-center px-4">
           <div className="text-center">
