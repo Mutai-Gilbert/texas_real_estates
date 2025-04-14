@@ -5,12 +5,29 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
-  --primary-rgb: 168, 0, 0;
+  --primary-rgb: 153, 27, 27;
 }
 
 body {
+  position: relative;
+  min-height: 100vh;
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+}
+
+/* Global background image */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
 @layer base {
@@ -42,11 +59,27 @@ body {
 
 /* Section title styles */
 .section-title-container {
-  @apply relative text-center mb-12;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .section-title {
-  @apply text-4xl md:text-5xl font-light relative inline-block;
+  display: inline-block;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  position: relative;
+  color: rgb(var(--primary-rgb));
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background-color: rgb(var(--primary-rgb));
 }
 
 /* Navigation styles */
@@ -62,6 +95,19 @@ body {
 .primary-button {
   @apply bg-[rgb(var(--primary-rgb))] text-white px-6 py-3 text-sm font-medium 
          hover:bg-[rgb(var(--primary-rgb))/90] transition-colors duration-200;
+}
+
+.secondary-button {
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  border: 2px solid rgb(var(--primary-rgb));
+  color: rgb(var(--primary-rgb));
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  background-color: rgb(var(--primary-rgb));
+  color: white;
 }
 
 /* Custom scrollbar */

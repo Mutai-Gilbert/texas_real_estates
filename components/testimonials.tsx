@@ -23,36 +23,41 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="py-16">
-      <div className="section-title-container">
-        <h2 className="section-title italic">Testimonials</h2>
-      </div>
-
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <p className="text-lg max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our clients have to say about their experience with Texas Real
-            Estate Executives - Next Level Agents.
-          </p>
+    <section className="relative">
+      {/* Solid background to block out hero-bg */}
+      <div className="absolute inset-0 bg-white" />
+      
+      <div className="relative py-16">
+        <div className="section-title-container">
+          <h2 className="section-title italic">Testimonials</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="bg-gray-50 p-6 rounded-lg shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="relative h-16 w-16 rounded-full overflow-hidden mr-4">
-                  <Image
-                    src={testimonial.image || "/placeholder.svg"}
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover"
-                  />
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Don't just take our word for it. Here's what our clients have to say about their experience with Texas Real
+              Estate Executives - Next Level Agents.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="bg-gray-50 p-6 rounded-lg shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="relative h-16 w-16 rounded-full overflow-hidden mr-4 shadow-md">
+                    <Image
+                      src={testimonial.image || "/placeholder.svg"}
+                      alt={testimonial.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <h3 className="font-bold text-gray-900">{testimonial.name}</h3>
                 </div>
-                <h3 className="font-bold">{testimonial.name}</h3>
+                <p className="italic text-gray-700">"{testimonial.text}"</p>
               </div>
-              <p className="italic">"{testimonial.text}"</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
