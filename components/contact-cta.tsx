@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -29,32 +30,33 @@ export default function ContactCta() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-8 py-24 text-center">
-        <h2 className="text-[56px] font-normal text-white mb-4 leading-tight tracking-[-0.02em]">
-          No spam. Just stories.
+        <h2 className="text-[56px] font-light text-white mb-4 leading-tight tracking-[-0.02em]">
+          Ready to Find Your Dream Home?
         </h2>
         <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-          Get occasional notes from us — slow, thoughtful, and human.
+          Let's start your journey to the perfect property. Our expert team is here to guide you every step of the way.
         </p>
 
-        {/* Email subscription form */}
-        <form onSubmit={handleSubmit} className="max-w-xl mx-auto flex gap-3">
-          <div className="flex-grow">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="w-full px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white placeholder:text-white/60 focus:outline-none focus:border-white/40 transition-colors"
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="px-6 py-3 bg-zinc-800 text-white rounded-full hover:bg-zinc-700 transition-colors whitespace-nowrap"
+        <Link
+          href="/contact"
+          className="inline-flex items-center px-8 py-4 bg-white text-black rounded-full hover:bg-white/90 transition-all group"
+        >
+          Get Started
+          <svg
+            className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Join waitlist
-          </button>
-        </form>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </Link>
       </div>
     </section>
   )

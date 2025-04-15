@@ -30,6 +30,16 @@ body::before {
   z-index: -1;
 }
 
+/* Exclude specific components from hero background */
+.featured-listings,
+.our-services,
+.testimonials,
+footer {
+  position: relative;
+  background-color: white;
+  z-index: 1;
+}
+
 @layer base {
   body {
     @apply antialiased;
