@@ -11,7 +11,7 @@ export default function FeaturedListings() {
       beds: 4,
       baths: 3,
       sqft: 2400,
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/house1.jpeg",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export default function FeaturedListings() {
       beds: 3,
       baths: 2.5,
       sqft: 2100,
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/house2.jpeg",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export default function FeaturedListings() {
       beds: 2,
       baths: 2,
       sqft: 1500,
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/house1.jpeg",
     },
   ]
 
